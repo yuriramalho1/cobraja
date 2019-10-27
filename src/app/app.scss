@@ -1,0 +1,7 @@
+.toolbar-background{
+  background-color: color($colors, primary, base);
+}
+ion-navbar button,
+ion-navbar .toolbar-title{
+  color: color($colors, light, base) !important;
+}

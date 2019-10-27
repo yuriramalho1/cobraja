@@ -1,0 +1,26 @@
+page-home {
+
+  .tituloCobranca{
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .rowCobranca{
+    font-weight: bold;
+    color: color($colors, dark-lighter, base);
+  }
+
+  .btnHome button{
+    min-width: 100%;
+    border-radius: 12px;
+  }
+
+  .btnImg button{
+    border: none;
+    min-height: 80px;
+  }
+
+  .btnImg img{
+    height: 80px;
+  }
+}
