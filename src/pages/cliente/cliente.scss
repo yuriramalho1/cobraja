@@ -1,0 +1,28 @@
+page-cliente {
+  ion-card-content{
+    padding: 0 !important;
+  }
+
+  .colIcon{
+    margin: auto;
+    font-size: 1.2em;
+    text-align: center;
+    color: color($colors, primary, base);
+  }
+
+  ion-row{
+    margin: 1.5vh 0;
+  }
+
+  ion-row span{
+    display: block;
+    color: #777;
+    font-size: 1.3rem;
+  }
+
+  .spanTitle{
+    color: #000;
+    
+    font-size: 1.4rem;
+  }
+}

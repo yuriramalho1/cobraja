@@ -1,0 +1,41 @@
+page-cobranca-cadastro {
+  ion-grid,
+  ion-header ion-col{
+    padding: 0 !important;
+  }
+
+  .colBtnHead{
+    text-align: center;
+  }
+
+  ion-item{
+    padding: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  .label[floating]{
+    margin-top: 0 !important;
+  }
+
+  .colBtnHead:first-of-type{
+    margin-left: 1.33333%
+  }
+  
+  .toolbar-title{
+    font-size: 2rem;
+    margin: auto;
+  }
+
+  ion-datetime{
+    padding-bottom: 3px !important;
+  }
+
+  ion-radio{
+    margin-right: 3vh !important;
+  }
+
+  ion-list-header{
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}

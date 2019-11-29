@@ -1,0 +1,32 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Cobranças</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-grid>
+      <ion-row *ngFor="let cobranca of listaCobrancas" (press)="popover(cobranca)">
+        <ion-col col-2 class="colIcon">
+          <ion-icon name="person"></ion-icon>
+        </ion-col>
+        <ion-col col-10>
+          <span class="spanTitle">{{cobranca.cliente.nome}}</span>
+          <span>{{cobranca.valorCobrado || 0 | currency : 'BRL' : 'symbol'}}</span>
+          <span>{{cobranca.dataFormatada}}</span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-list>
+
+  <ion-fab right bottom>
+    <button ion-fab color="primary" (click)="toCadastro()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+</ion-content>

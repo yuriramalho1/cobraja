@@ -1,7 +1,42 @@
 .toolbar-background{
   background-color: color($colors, primary, base);
 }
+
+.toolbar-title{
+  color: color($colors, light, base);
+}
+
 ion-navbar button,
 ion-navbar .toolbar-title{
   color: color($colors, light, base) !important;
+}
+
+.fixed-content,
+.scroll-content{
+  padding: 10px !important;
+}
+
+.botaoHeaderModal{
+  display: inline-block;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+  font-size: 3vh;
+}
+
+.labelRegion{
+  margin: 0;
+  font-size: 18px;
+  border-bottom: solid 1.4px #dcdcdc;
+}
+
+.popover-menu .popover-content{
+  width: 11vh !important;
+  left: auto !important;
+  right: 9vh !important;
+}
+
+.noValid .item-inner{
+  border-bottom-color: #dedede !important;
+  box-shadow: none !important;
 }

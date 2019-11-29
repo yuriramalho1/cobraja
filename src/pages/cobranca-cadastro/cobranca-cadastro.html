@@ -1,0 +1,106 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-1 class="colBtnHead">
+          <button ion-button class="botaoHeaderModal" (click)="voltar()">
+            <ion-icon name="arrow-back"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col offset-1 col-9 class="toolbar-title">
+          <span>{{title}}</span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form id="formCadastro">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-5>
+          <ion-item>
+            <ion-label floating>No valor de</ion-label>
+            <ion-input type="number" [(ngModel)]="cobranca.valorCobrado" name="valorCobrado"></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <ion-col col-7>
+          <ion-item>
+            <ion-label floating>Com vencimento em</ion-label>
+            <ion-datetime color="primary" displayFormat="DD/MM/YYYY" [(ngModel)]="cobranca.dataFormatada" name="dataFormatada"></ion-datetime>
+          </ion-item>
+        </ion-col>
+
+        <ion-col col-12>
+          <ion-item class="checkboxPermissao">
+            <ion-label stacked>Aplicar multas e juros? </ion-label>
+            <ion-checkbox color="primary" [(ngModel)]="cobranca.aplicarJuros" name="aplicarJuros" small></ion-checkbox>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row *ngIf="cobranca.aplicarJuros">
+        <ion-col col-5>
+          <ion-item class="noValid">
+            <ion-label floating>Juros(ao mês)</ion-label>
+            <ion-input type="text" [(ngModel)]="labelJurosMes" name="labelJurosMes" aria-readonly="true" readonly></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <ion-col col-7>
+          <ion-item>
+            <ion-label floating>Valor</ion-label>
+            <ion-input type="number" [(ngModel)]="cobranca.valorPercentualJuros" name="valorPercentualJuros"></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <ion-col col-5>
+          <ion-item>
+            <ion-label floating>Multa</ion-label>
+            <ion-select [(ngModel)]="cobranca.tipoMulta" placeholder="Selecione..." interface="action-sheet" name="tipoMulta">
+              <ion-option value="PERCENTUAL">Percentual</ion-option>
+              <ion-option value="FIXO">Fixo</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+
+        <ion-col col-7>
+          <ion-item>
+            <ion-label floating>Valor</ion-label>
+            <ion-input type="number" [(ngModel)]="cobranca.valorMulta" name="valorMulta"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-item>
+          <ion-label color="primary" stacked>Quem irá cobrar?</ion-label>
+          <ionic-selectable item-content [(ngModel)]="cobranca.cliente" itemValueField="id" itemTextField="nome" [items]="listaClientes" [canSearch]="true" name="cliente"></ionic-selectable>
+        </ion-item>
+      </ion-row>
+
+      <ion-list radio-group [(ngModel)]="cobranca.tipoEnvioCobranca" name="tipoEnvioCobranca">
+        <ion-list-header>Como deseja enviar a cobrança?</ion-list-header>
+        <ion-item>
+          <ion-radio value="EMAIL" item-left></ion-radio>
+          <ion-label><ion-icon name="mail"></ion-icon> E-mail</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-radio value="SMS" item-left></ion-radio>
+          <ion-label><ion-icon name="chatbubbles"></ion-icon> SMS</ion-label>
+        </ion-item>
+      </ion-list>
+
+      <ion-row style="margin-top: 5vh">
+        <ion-col col-12>
+          <button ion-button full block color="primary" (click)="confirmar()">Continuar</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>  
+  </form>
+</ion-content>

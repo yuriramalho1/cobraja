@@ -1,0 +1,32 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Clientes</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-grid>
+      <ion-row *ngFor="let cliente of listaClientes" (press)="popover(cliente)">
+        <ion-col col-2 class="colIcon">
+          <ion-icon name="person"></ion-icon>
+        </ion-col>
+        <ion-col col-10>
+          <span class="spanTitle">{{cliente.nome}}</span>
+          <span>{{cliente.email}}</span>
+          <span>{{cliente.celular}}</span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-list>
+
+  <ion-fab right bottom>
+    <button ion-fab color="primary" (click)="toCadastro()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+</ion-content>
