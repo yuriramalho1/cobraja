@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.br.cobraja" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="br.com.cobraja" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Cobra Já</name>
     <description>Descrição do aplicativo.</description>
-    <author email="mudar@mudar.com" href="#">Yure Erik</author>
+    <author email="" href="#">Yure Erik</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
@@ -81,6 +81,5 @@
     <plugin name="cordova-plugin-device" spec="1.1.4" />
     <plugin name="cordova-plugin-splashscreen" spec="~4.0.1" />
     <plugin name="cordova-plugin-ionic-webview" spec="^1.1.11" />
-    <engine name="android" spec="~7.1.4" />
-    <engine name="browser" spec="~5.0.4" />
+    <engine name="android" spec="7.1.4" />
 </widget>
